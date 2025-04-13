@@ -6,11 +6,7 @@ const inputName = document.getElementById('name-input')
 const inputRate = document.getElementById('rate-input')
 const validError = document.getElementById('valid-error')
 const submitForm = document.getElementById('submit-form')
-const data = [{
-    name:'this is a tests' , 
-    rate:4 ,
-    id:  Date.now()
-}]
+const data = []
 inputRate.addEventListener('input' , (e)=>{
     const number = Number(e.target.value)
         if (number > 5 || number < 0 || !number ) {
@@ -23,6 +19,17 @@ inputRate.addEventListener('input' , (e)=>{
         submitForm.removeAttribute('disabled' )
         inputRate.classList.remove('error-input')
     }
+})
+form.addEventListener('submit' , e=>{
+    e.preventDefault()
+        data.push({
+        id:Date.now(),
+        name:e.target.name.value,
+        rate:e.target.rate.value
+    })
+    e.target.name.value = ''
+    e.target.rate.value = ''
+    renderTableRow()
 })
 
 const renderTableRow=()=>{
@@ -42,6 +49,8 @@ const renderTableRow=()=>{
         button.classList.add('delete-button')
         button.addEventListener('click' , ()=> {
             // do something
+            console.log('delete');
+            
         })
 
         const tdAction = document.createElement('td')
