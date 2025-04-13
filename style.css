@@ -64,3 +64,8 @@ background-color: #d30000;
     display: flex;
     justify-content: center;
 }
+
+.error-input{
+  border:1px solid #f80000;
+  outline: none;
+}
