@@ -67,5 +67,6 @@ background-color: #d30000;
 
 .error-input{
   border:1px solid #f80000;
+  background-color: #d300001f;
   outline: none;
 }
