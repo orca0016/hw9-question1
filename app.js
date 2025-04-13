@@ -1,0 +1,7 @@
+const sortName = document.getElementById('sort-name')
+const sortRate = document.getElementById('sort-rate')
+const bodyTable = document.getElementById('body-table')
+const form = document.getElementById('form-add-movie')
+const inputName = document.getElementById('name-input')
+const inputRate = document.getElementById('rate-input')
+const validError = document.getElementById('valid-error')
