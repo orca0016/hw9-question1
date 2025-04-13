@@ -7,7 +7,8 @@ const inputRate = document.getElementById("rate-input");
 const validError = document.getElementById("valid-error");
 const submitForm = document.getElementById("submit-form");
 let data = [];
-
+let isSortName = false;
+let isSortRate = false;
 inputRate.addEventListener("input", (e) => {
   const number = Number(e.target.value);
   if (number > 5 || number < 0 || !number) {
@@ -52,7 +53,6 @@ const renderTableRow = () => {
     button.classList.add("delete-button");
     button.addEventListener("click", () => {
       deleteMovieHandler(item.id);
-      console.log("add event listener");
     });
 
     const tdAction = document.createElement("td");
@@ -67,3 +67,38 @@ const deleteMovieHandler = (id) => {
   data = data.filter((item) => item.id !== id);
   renderTableRow();
 };
+sortName.addEventListener("click", () => {
+  isSortName = !isSortName;
+  data.sort((a, b) => {
+    let fa = a.name.toLowerCase(),
+      fb = b.name.toLowerCase();
+    if (isSortName) {
+      if (fa < fb) return -1;
+      if (fa > fb) return 1;
+      return 0;
+    } else {
+      if (fa > fb) return -1;
+      if (fa < fb) return 1;
+      return 0;
+    }
+  });
+  renderTableRow();
+});
+sortRate.addEventListener("click", () => {
+  isSortRate = !isSortRate;
+  data.sort((a, b) => {
+    let fa = parseFloat(a.rate),
+      fb = parseFloat(b.rate);
+
+    if (isSortRate) {
+      if (fa < fb) return -1;
+      if (fa > fb) return 1;
+      return 0;
+    } else {
+      if (fa > fb) return -1;
+      if (fa < fb) return 1;
+      return 0;
+    }
+  });
+  renderTableRow();
+});

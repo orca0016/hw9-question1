@@ -70,3 +70,6 @@ background-color: #d30000;
   background-color: #d300001f;
   outline: none;
 }
+#sort-name , #sort-rate{
+  cursor: pointer;
+}
