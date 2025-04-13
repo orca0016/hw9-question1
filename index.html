@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>My Favorite Movie</h1>
+      <h1>My Favorite Movie</h1>
 
-        <form  id="form" class="my-form">
-            <input type="text" name="name" placeholder="name" id="name-input">
-            <input type="text" name="rate" placeholder="rate" id="rate-input">
-            <button type="submit">add</button>
-        </form>
+      <form id="form" class="my-form">
+        <input type="text" name="name" placeholder="name" id="name-input" />
+        <input type="text" name="rate" placeholder="rate" id="rate-input" />
+        <button type="submit">add</button>
+      </form>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th id="soart-name">name</th>
-                <th id="soart-rate">rate</th>
-                <th>action</th>
-            </tr>
-            </thead>
-            <tbody id="body-table">
-
-
-            </tbody>
-        </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th id="sort-name">name</th>
+            <th id="sort-rate">rate</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody id="body-table">
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td class="column-table-delete">
+              <button class="delete-button">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>
